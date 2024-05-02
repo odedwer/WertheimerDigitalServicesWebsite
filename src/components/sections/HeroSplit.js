@@ -83,9 +83,9 @@ class HeroSplit extends React.Component {
                                         Wertheimer Digital Services
                                     </h1>
                                     <p className="mt-0 mb-32">
-                                        We provide a wide range of technological services.
-                                        Specializing in data analysis, business intelligence & data workflows, we will
-                                        can digitally transform your organization and increase effectiveness and
+                                        I provide a wide range of technological services.
+                                        Specializing in data analysis, business intelligence & data workflows, I can help
+                                        to digitally transform your organization, increasing effectiveness and
                                         productivity.
                                     </p>
                                     <ButtonGroup>
