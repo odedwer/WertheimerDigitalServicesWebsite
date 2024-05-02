@@ -80,7 +80,7 @@ class HeroSplit extends React.Component {
                             <div className="split-item">
                                 <div className="hero-content split-item-content center-content-mobile reveal-from-top">
                                     <h1 className="mt-0 mb-16">
-                                        Wertheimer Digital services
+                                        Wertheimer Digital Services
                                     </h1>
                                     <p className="mt-0 mb-32">
                                         We provide a wide range of technological services.
