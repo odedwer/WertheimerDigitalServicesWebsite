@@ -4,6 +4,7 @@ import {SectionSplitProps} from '../../utils/SectionProps';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
+import {summary, title} from "../../assets/Constants";
 
 
 const propTypes = {
