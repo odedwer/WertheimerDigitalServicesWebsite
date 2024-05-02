@@ -4,7 +4,8 @@ import {SectionSplitProps} from '../../utils/SectionProps';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
-import Modal from '../elements/Modal';
+import headshot from './../../assets/images/headshot.JPG'
+
 
 const propTypes = {
     ...SectionSplitProps.types
@@ -101,7 +102,7 @@ class HeroSplit extends React.Component {
                                     className="hero-figure split-item-image split-item-image-fill illustration-element-01 reveal-from-bottom">
                                     <div className="headshot">
                                         <Image
-                                            src={require('./../../assets/images/headshot.JPG')}
+                                            src={headshot}//{require('./../../assets/images/headshot.JPG')}
                                             alt="headshot"
                                             style={{width: 400, height: 400, borderRadius: 400/ 2}}
                                         />
