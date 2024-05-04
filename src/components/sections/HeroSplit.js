@@ -87,7 +87,7 @@ class HeroSplit extends React.Component {
                                         {summary}
                                     </p>
                                     <ButtonGroup>
-                                        <Button tag="a" color="primary" href="https://cruip.com/" wideMobile>
+                                        <Button tag="a" color="primary" href="/contact/" wideMobile>
                                             Contact us
                                         </Button>
                                         <Button tag="a" color="dark" href="https://cruip.com/" wideMobile>
