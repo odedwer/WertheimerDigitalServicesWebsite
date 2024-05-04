@@ -13,11 +13,11 @@ class Home extends React.Component {
       <React.Fragment>
         <HeroSplit hasBgColor invertColor />
         <FeaturesTiles />
-        <FeaturesTabs topDivider bottomOuterDivider />
-        <News className="illustration-section-01" />
+        {/*<FeaturesTabs topDivider bottomOuterDivider />*/}
+        {/*<News className="illustration-section-01" />*/}
         <Roadmap topOuterDivider />
-        <Pricing hasBgColor pricingSlider />
-        <Cta hasBgColor invertColor split />
+        {/*<Pricing hasBgColor pricingSlider />*/}
+        {/*<Cta hasBgColor invertColor split />*/}
       </React.Fragment>
     );
   }

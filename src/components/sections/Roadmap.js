@@ -44,8 +44,8 @@ class Roadmap extends React.Component {
     );
 
     const sectionHeader = {
-      title: 'Product roadmap',
-      paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus in ornare.'
+      title: 'Experience',
+      paragraph: ''
     };
 
     return (
@@ -57,20 +57,35 @@ class Roadmap extends React.Component {
           <div className={innerClasses}>
             <SectionHeader data={sectionHeader} className="center-content" />
             <Timeline>
-              <TimelineItem title="November 2019">
-                Deployed a high-quality first release and conducted a market validation test
+              <TimelineItem title="October 2017">
+                CS & Psychology B.Sc in the Hebrew University of Jerusalem
               </TimelineItem>
-              <TimelineItem title="December 2019">
-                Deployed a high-quality first release and conducted a market validation test
+              <TimelineItem title="May 2018">
+                Programmer in a cognitive neuroscience lab, specializing in EEG & eye-tracking.
               </TimelineItem>
-              <TimelineItem title="January 2020">
-                Deployed a high-quality first release and conducted a market validation test
-              </TimelineItem>
-              <TimelineItem title="February 2020">
-                Deployed a high-quality first release and conducted a market validation test
+              <TimelineItem title="October 2019">
+                TA in a programming course for CS students in the Hebrew University, teaching C/C++
               </TimelineItem>
               <TimelineItem title="March 2020">
-                Deployed a high-quality first release and conducted a market validation test
+                Programmer in "Computational Principles of Cognition" course in the Hebrew University, Led by a Harvard Postdoc
+              </TimelineItem>
+              <TimelineItem title="October 2020">
+                Accepted into an excellence direct PhD program in computational neuroscience, in ELSC
+              </TimelineItem>
+              <TimelineItem title="October 2020">
+                Promoted to the head of the C/C++ course
+              </TimelineItem>
+              <TimelineItem title="October 2021">
+                TA and Programmer in a statistics course in the Hebrew University
+              </TimelineItem>
+              <TimelineItem title="October 2022">
+                Promoted to the head of the statistics course
+              </TimelineItem>
+              <TimelineItem title="October 2023">
+                BI, assimilation of a new information system & development of custom code for automations in the design department of the IDF ground forces
+              </TimelineItem>
+              <TimelineItem title="December 2023">
+                BI, assimilation of a new information system & development of automatic processes in the organization department of the IDF C4I wing
               </TimelineItem>
             </Timeline>
           </div>

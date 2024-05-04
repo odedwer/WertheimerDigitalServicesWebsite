@@ -44,11 +44,11 @@ class Footer extends React.Component {
             )}>
             <div className="footer-top space-between text-xxs">
               <Logo />
-              <FooterSocial />
+              {/*<FooterSocial />*/}
             </div>
             <div className="footer-bottom space-between text-xxs invert-order-desktop">
               <FooterNav />
-              <div className="footer-copyright">&copy; 2020 Tidy, all rights reserved</div>
+              <div className="footer-copyright">&copy; Wertheimer digital services, all rights reserved </div>
             </div>
           </div>
         </div>
