@@ -26,13 +26,16 @@ class ContactForm extends React.Component {
             subject: "",
             content: ""
         }
+        this.api_key = process.env.REACT_APP_API_KEY;
+        this.api_url = process.env.REACT_APP_API_URL;
     }
 
     submit(e) {
-        fetch('https://t91kir4ffh.execute-api.us-east-1.amazonaws.com/default/sendEmailFromContactForm', {
+        fetch(this.api_url, {
             method: 'POST',
             mode: 'no-cors',
             headers: {
+                'x-api-key': this.api_key,
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
                 // 'Access-Control-Allow-Origin': '*',
