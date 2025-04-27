@@ -33,9 +33,8 @@ class ContactForm extends React.Component {
     submit(e) {
         fetch(this.api_url, {
             method: 'POST',
-            mode: 'no-cors',
             headers: {
-                'x-api-key': `${this.api_key}/contact`,
+                'x-api-key': `${this.api_key}`,
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
                 // 'Access-Control-Allow-Origin': '*',
@@ -43,7 +42,9 @@ class ContactForm extends React.Component {
                 // 'Access-Control-Allow-Methods' : ['GET', 'POST', 'OPTIONS']
             },
             body: JSON.stringify(this.state)
-        }).then((r)=>console.log(r)).catch((e)=>console.log(e));
+        })
+            .then((r)=>console.log(r))
+            .catch((e)=>console.log(e));
     }
     render() {
 
