@@ -47,7 +47,6 @@ class ContactForm extends React.Component {
     }
 
     submit(e) {
-        e.preventDefault();
         window.grecaptcha.ready(() => {
             window.grecaptcha.execute(this.recaptcha_site_key, {action: 'submit'}).then((token) => {
                 const submission = {
