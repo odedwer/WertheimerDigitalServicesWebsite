@@ -28,24 +28,48 @@ class ContactForm extends React.Component {
         }
         this.api_key = process.env.REACT_APP_API_KEY;
         this.api_url = process.env.REACT_APP_API_URL;
+        this.recaptcha_site_key = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+    }
+
+    loadReCaptchaScript() {
+        if (!document.getElementById('recaptcha-script')) {
+            const script = document.createElement('script');
+            script.id = 'recaptcha-script';
+            script.src = `https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY`;
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+    }
+
+    componentDidMount() {
+        this.loadReCaptchaScript();
     }
 
     submit(e) {
-        fetch(this.api_url, {
-            method: 'POST',
-            headers: {
-                'x-api-key': `${this.api_key}`,
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-                // 'Access-Control-Allow-Origin': '*',
-                // 'Access-Control-Allow-Credentials': 'true',
-                // 'Access-Control-Allow-Methods' : ['GET', 'POST', 'OPTIONS']
-            },
-            body: JSON.stringify(this.state)
-        })
-            .then((r)=>console.log(r))
-            .catch((e)=>console.log(e));
+        e.preventDefault();
+        window.grecaptcha.ready(() => {
+            window.grecaptcha.execute(this.recaptcha_site_key, {action: 'submit'}).then((token) => {
+                const submission = {
+                    ...this.state,
+                    recaptchaToken: token
+                };
+
+                fetch(this.api_url, {
+                    method: 'POST',
+                    headers: {
+                        'x-api-key': `${this.api_key}`,
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(submission)
+                })
+                    .then((r) => console.log(r))
+                    .catch((e) => console.log(e));
+            });
+        });
     }
+
     render() {
 
         const {
