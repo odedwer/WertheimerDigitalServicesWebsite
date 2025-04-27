@@ -35,7 +35,7 @@ class ContactForm extends React.Component {
         if (!document.getElementById('recaptcha-script')) {
             const script = document.createElement('script');
             script.id = 'recaptcha-script';
-            script.src = `https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY`;
+            script.src = `https://www.google.com/recaptcha/api.js?render=${this.recaptcha_site_key}`;
             script.async = true;
             script.defer = true;
             document.body.appendChild(script);
