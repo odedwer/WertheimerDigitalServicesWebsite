@@ -35,7 +35,7 @@ class ContactForm extends React.Component {
             method: 'POST',
             mode: 'no-cors',
             headers: {
-                'x-api-key': this.api_key,
+                'x-api-key': `${this.api_key}/contact`,
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
                 // 'Access-Control-Allow-Origin': '*',
