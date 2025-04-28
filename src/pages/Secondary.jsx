@@ -70,7 +70,7 @@ class Secondary extends React.Component {
             <figure>
               <Image
                 className="image-larger"
-                src={require('./../assets/images/image-placeholder.jpg')}
+                src={'../../public/images/image-placeholder.jpg'}
                 alt="Placeholder"
                 width={712}
                 height={400} />

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
-import Tabs, { TabList, Tab, TabPanel } from './../elements/Tabs';
+import Tabs, { TabList, Tab, TabPanel } from '../elements/Tabs';
 import Image from '../elements/Image';
 
 const propTypes = {
@@ -62,7 +62,7 @@ class FeaturesTabs extends React.Component {
                 <Tab tabId="tab-a">
                   <div className="features-tabs-tab-image mb-12">
                     <Image
-                      src={require('./../../assets/images/features-tabs-icon-01.svg')}
+                      src={require('../../../public/images/features-tabs-icon-01.svg')}
                       alt="Tab icon 01"
                       width={56}
                       height={56} />
@@ -74,7 +74,7 @@ class FeaturesTabs extends React.Component {
                 <Tab tabId="tab-b">
                   <div className="features-tabs-tab-image mb-12">
                     <Image
-                      src={require('./../../assets/images/features-tabs-icon-02.svg')}
+                      src={require('../../../public/images/features-tabs-icon-02.svg')}
                       alt="Tab icon 02"
                       width={56}
                       height={56} />
@@ -86,7 +86,7 @@ class FeaturesTabs extends React.Component {
                 <Tab tabId="tab-c">
                   <div className="features-tabs-tab-image mb-12">
                     <Image
-                      src={require('./../../assets/images/features-tabs-icon-03.svg')}
+                      src={require('../../../public/images/features-tabs-icon-03.svg')}
                       alt="Tab icon 03"
                       width={56}
                       height={56} />
@@ -98,7 +98,7 @@ class FeaturesTabs extends React.Component {
                 <Tab tabId="tab-d">
                   <div className="features-tabs-tab-image mb-12">
                     <Image
-                      src={require('./../../assets/images/features-tabs-icon-04.svg')}
+                      src={require('../../../public/images/features-tabs-icon-04.svg')}
                       alt="Tab icon 04"
                       width={56}
                       height={56} />
@@ -111,7 +111,7 @@ class FeaturesTabs extends React.Component {
               <TabPanel id="tab-a">
                 <Image
                   className="has-shadow"
-                  src={require('./../../assets/images/features-tabs-image.png')}
+                  src={require('../../../public/images/features-tabs-image.png')}
                   alt="Features tabs image 01"
                   width={896}
                   height={504} />
@@ -119,7 +119,7 @@ class FeaturesTabs extends React.Component {
               <TabPanel id="tab-b">
                 <Image
                   className="has-shadow"
-                  src={require('./../../assets/images/features-tabs-image.png')}
+                  src={require('../../../public/images/features-tabs-image.png')}
                   alt="Features tabs image 02"
                   width={896}
                   height={504} />
@@ -127,7 +127,7 @@ class FeaturesTabs extends React.Component {
               <TabPanel id="tab-c">
                 <Image
                   className="has-shadow"
-                  src={require('./../../assets/images/features-tabs-image.png')}
+                  src={require('../../../public/images/features-tabs-image.png')}
                   alt="Features tabs image 03"
                   width={896}
                   height={504} />
@@ -135,7 +135,7 @@ class FeaturesTabs extends React.Component {
               <TabPanel id="tab-d">
                 <Image
                   className="has-shadow"
-                  src={require('./../../assets/images/features-tabs-image.png')}
+                  src={require('../../../public/images/features-tabs-image.png')}
                   alt="Features tabs image 04"
                   width={896}
                   height={504} />

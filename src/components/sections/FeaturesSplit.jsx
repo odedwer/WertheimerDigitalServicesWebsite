@@ -86,7 +86,7 @@ class FeaturesSplit extends React.Component {
                   data-reveal-delay="200">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/features-split-image-01.png')}
+                    src={require('../../../public/images/features-split-image-01.png')}
                     alt="Features split 01"
                     width={528}
                     height={396} />
@@ -111,7 +111,7 @@ class FeaturesSplit extends React.Component {
                   data-reveal-delay="200">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/features-split-image-02.png')}
+                    src={require('../../../public/images/features-split-image-02.png')}
                     alt="Features split 02"
                     width={528}
                     height={396} />
@@ -136,7 +136,7 @@ class FeaturesSplit extends React.Component {
                   data-reveal-delay="200">
                   <Image
                     className="has-shadow"
-                    src={require('./../../assets/images/features-split-image-03.png')}
+                    src={require('../../../public/images/features-split-image-03.png')}
                     alt="Features split 03"
                     width={528}
                     height={396} />
