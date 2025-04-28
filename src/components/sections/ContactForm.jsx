@@ -12,10 +12,19 @@ const ContactForm = (props) => {
     content: ""
   });
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false); // ✨ NEW
+  const [error, setError] = useState(""); // ✨ NEW
 
-  const apiUrl = process.env.REACT_APP_API_URL;
-  const apiKey = process.env.REACT_APP_API_KEY;
-  const recaptchaSiteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+  let apiUrl, apiKey, recaptchaSiteKey;
+  try {
+    apiUrl = process.env.REACT_APP_API_URL;
+    apiKey = process.env.REACT_APP_API_KEY;
+    recaptchaSiteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+  } catch (error) {
+    apiUrl = "https://api.example.com/submit";
+    apiKey = "your-api-key";
+    recaptchaSiteKey = "your-recaptcha-site-key";
+  }
 
   useEffect(() => {
     if (!document.getElementById("recaptcha-script")) {
@@ -31,52 +40,66 @@ const ContactForm = (props) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // Reset success and error when user starts typing
+    setSubmitted(false);
+    setError("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setSubmitting(true);
+    setError("");
+    setSubmitted(false);
 
     try {
       await window.grecaptcha.ready(async () => {
-        const token = await window.grecaptcha.execute(recaptchaSiteKey, { action: "submit" });
+        try {
+          const token = await window.grecaptcha.execute(recaptchaSiteKey, { action: "submit" });
 
-        const payload = {
-          ...formData,
-          recaptchaToken: token
-        };
+          const payload = {
+            ...formData,
+            recaptchaToken: token
+          };
 
-        await submitContactForm(apiUrl, apiKey, payload);
+          await submitContactForm(apiUrl, apiKey, payload);
 
-        alert("Your message was submitted successfully!");
-        setFormData({
-          email: "",
-          subject: "",
-          content: ""
-        });
+          setFormData({
+            email: "",
+            subject: "",
+            content: ""
+          });
+          setSubmitted(true);
+        } catch (submissionError) {
+          console.error(submissionError);
+          setError(
+              "We're sorry, but your request could not be sent right now. Please send an email to wertheimer.digital.services+contact@gmail.com directly."
+          );
+        }
       });
-    } catch (error) {
-      console.error(error);
-      alert("Failed to submit your message. Please try again later.");
+    } catch (grecaptchaError) {
+      console.error(grecaptchaError);
+      setError(
+          "We're sorry, but we could not verify your request. Please send an email to wertheimer.digital.services+contact@gmail.com directly."
+      );
     } finally {
       setSubmitting(false);
     }
   };
 
   const outerClasses = classNames(
-    "signin section",
-    props.topOuterDivider && "has-top-divider",
-    props.bottomOuterDivider && "has-bottom-divider",
-    props.hasBgColor && "has-bg-color",
-    props.invertColor && "invert-color",
-    props.className
+      "signin section",
+      props.topOuterDivider && "has-top-divider",
+      props.bottomOuterDivider && "has-bottom-divider",
+      props.hasBgColor && "has-bg-color",
+      props.invertColor && "invert-color",
+      props.className
   );
 
   const innerClasses = classNames(
-    "signin-inner section-inner",
-    props.topDivider && "has-top-divider",
-    props.bottomDivider && "has-bottom-divider"
+      "signin-inner section-inner",
+      props.topDivider && "has-top-divider",
+      props.bottomDivider && "has-bottom-divider"
   );
 
   const sectionHeader = {
@@ -84,64 +107,75 @@ const ContactForm = (props) => {
   };
 
   return (
-    <section {...props} className={outerClasses}>
-      <div className="container">
-        <div className={innerClasses}>
-          <SectionHeader tag="h2" data={sectionHeader} className="center-content" />
-          <div className="tiles-wrap">
-            <div className="tiles-item">
-              <div className="tiles-item-inner">
-                <form onSubmit={handleSubmit}>
-                  <fieldset>
-                    <div className="mb-12">
-                      <Input
-                        type="email"
-                        label="Email"
-                        placeholder="Your Email"
-                        labelHidden
-                        required
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="mb-12">
-                      <Input
-                        type="text"
-                        label="Subject"
-                        placeholder="Subject"
-                        labelHidden
-                        required
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="mb-12">
-                      <Input
-                        type="textarea"
-                        label="Content"
-                        placeholder="Please write your message"
-                        labelHidden
-                        required
-                        name="content"
-                        value={formData.content}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="mt-24 mb-32">
-                      <Button color="primary" wide type="submit" disabled={submitting}>
-                        {submitting ? "Submitting..." : "Submit"}
-                      </Button>
-                    </div>
-                  </fieldset>
-                </form>
+      <section {...props} className={outerClasses}>
+        <div className="container">
+          <div className={innerClasses}>
+            <SectionHeader tag="h2" data={sectionHeader} className="center-content" />
+            <div className="tiles-wrap">
+              <div className="tiles-item">
+                <div className="tiles-item-inner">
+                  <form onSubmit={handleSubmit}>
+                    <fieldset disabled={submitting}>
+                      <div className="mb-12">
+                        <Input
+                            type="email"
+                            label="Email"
+                            placeholder="Your Email"
+                            labelHidden
+                            required
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+                      </div>
+                      <div className="mb-12">
+                        <Input
+                            type="text"
+                            label="Subject"
+                            placeholder="Subject"
+                            labelHidden
+                            required
+                            name="subject"
+                            value={formData.subject}
+                            onChange={handleChange}
+                        />
+                      </div>
+                      <div className="mb-12">
+                        <Input
+                            type="textarea"
+                            label="Content"
+                            placeholder="Please write your message"
+                            labelHidden
+                            required
+                            name="content"
+                            value={formData.content}
+                            onChange={handleChange}
+                        />
+                      </div>
+                      <div className="mt-24 mb-32">
+                        <Button color="primary" wide type="submit" disabled={submitting}>
+                          {submitting ? "Submitting..." : "Submit"}
+                        </Button>
+                      </div>
+                      {/* ✨ NEW - Messages */}
+                      {submitted && (
+                          <div className="form-message success-message" style={{ color: "green", textAlign: "center", marginTop: "1rem" }}>
+                            Your message was sent successfully!
+                          </div>
+                      )}
+                      {error && (
+                          <div className="form-message error-message" style={{ color: "red", textAlign: "center", marginTop: "1rem" }}>
+                            {error}
+                          </div>
+                      )}
+                    </fieldset>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };
 

@@ -39,3 +39,16 @@
 		max-width: $container--width-xs;
 	}
 }
+
+.form-message {
+	font-size: 1rem;
+	margin-top: 1rem;
+}
+
+.success-message {
+	color: green;
+}
+
+.error-message {
+	color: red;
+}
