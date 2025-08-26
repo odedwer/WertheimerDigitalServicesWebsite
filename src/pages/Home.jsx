@@ -6,8 +6,9 @@ import TechBadge from '../components/TechBadge';
 import CTAButton from '../components/CTAButton';
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const techItems = t('tech.items', { returnObjects: true });
+  const isRtl = i18n.language === 'he';
 
   return (
     <>
@@ -23,7 +24,7 @@ export default function Home() {
             <p className="mx-auto max-w-2xl text-slate-600 mb-8">{t('hero.subtitle')}</p>
           </Reveal>
           <Reveal delay={0.25}>
-            <div className="flex justify-center gap-3">
+            <div className={`flex justify-center gap-3 ${isRtl ? 'flex-row-reverse' : ''}`}>
               <CTAButton to="/contact">{t('hero.primary')}</CTAButton>
               <a href="#services" className="btn-ghost">{t('hero.secondary')}</a>
             </div>
