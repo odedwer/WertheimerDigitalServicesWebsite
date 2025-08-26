@@ -1,16 +1,25 @@
 version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm ci
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: dist  # <<--- CHANGE THIS from build to dist
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
+applications:
+  - appRoot: /
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: dist
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+    environment:
+      # Set these in Amplify console/hosting environment variables
+      # REACT_APP_API_URL: https://your-api.example.com/contact
+      # REACT_APP_API_KEY: your-api-key
+      # REACT_APP_RECAPTCHA_SITE_KEY: your-recaptcha-site-key
+      # Optionally add analytics IDs later (kept easy to integrate)
+      variables: {}

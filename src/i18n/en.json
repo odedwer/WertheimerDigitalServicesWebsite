@@ -1,0 +1,110 @@
+{
+  "brand": "Wertheimer Digital Services",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "process": "Process",
+    "about": "About",
+    "tech": "Tech",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "lang": "HE"
+  },
+  "hero": {
+    "title": "Digital transformation that delivers",
+    "subtitle": "Process streamlining, automation, BI and data foundations — to save costs and make your business digitally accessible.",
+    "primary": "Contact",
+    "secondary": "Explore services"
+  },
+  "services": {
+    "title": "What I do",
+    "subtitle": "End-to-end solutions for build, automation and measurement",
+    "cards": {
+      "web": {
+        "title": "Websites & Products",
+        "desc": "Modern, fast, accessible web with measurement built from day one."
+      },
+      "ops": {
+        "title": "Ops Streamlining & Automation",
+        "desc": "Map manual processes and build lean, flexible automation platforms."
+      },
+      "digit": {
+        "title": "Organization Digitization",
+        "desc": "Tooling, integrations and digital workflows that stick."
+      },
+      "metrics": {
+        "title": "Analytics, BI & KPIs",
+        "desc": "Implement tracking, clean dashboards and a data culture."
+      }
+    },
+    "cta": "Let's talk"
+  },
+  "process": {
+    "title": "How it works",
+    "steps": [
+      {"title": "Discovery & Goals", "desc": "Current state mapping and KPI definition."},
+      {"title": "Architecture", "desc": "Tools selection, data flows and foundations."},
+      {"title": "Build & Deploy", "desc": "Implementation, integrations, E2E testing."},
+      {"title": "Measure & Optimize", "desc": "Tracking, reporting and continuous improvements."}
+    ]
+  },
+  "about": {
+    "title": "Hi, I'm Wertheimer",
+    "body": "CS graduate from the Hebrew University and a PhD candidate in computational neuroscience. Research background in AI, mathematical modeling and data analysis. I build easy-to-use, adjustable automation platforms. Military experience in BI, data management/analysis and process automation. A one-person business — fast, precise, outcome-driven."
+  },
+  "capabilities": {
+    "title": "Core capabilities",
+    "items": [
+      "Custom automation platforms",
+      "Systems integrations (APIs, Webhooks)",
+      "Data collection, cleaning & enrichment",
+      "Executive dashboards & reporting",
+      "Impact-driven prioritization",
+      "Security & modern best practices"
+    ]
+  },
+  "tech": {
+    "title": "Tech stack",
+    "subtitle": "Tools that are easy to maintain and safe to deploy",
+    "items": ["React", "AWS (Amplify/Lambda)", "Node.js", "Python", "Docker", "PostgreSQL", "MongoDB", "Google Cloud", "REST/GraphQL"]
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": {
+      "q": "How long does a typical project take?",
+      "a": "Depends on scope. A simple MVP can be a few weeks; broader transformations take longer. We start with a short discovery and a clear plan."
+    },
+    "q2": {
+      "q": "What about ongoing work?",
+      "a": "I can do monthly maintenance or handover with clean code and documentation — whatever fits your team."
+    },
+    "q3": {
+      "q": "How do you handle measurement?",
+      "a": "KPIs and tracking are built in from day one: goals, events and dashboards to inform decisions."
+    }
+  },
+  "cta": {
+    "headline": "Ready to accelerate your digital operations?",
+    "primary": "Contact now"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Tell me about your digital challenge. I’ll get back to you shortly.",
+    "emailLabel": "Email",
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "submit": "Send",
+    "error": "Something went wrong. Please try again.",
+    "policy": "Protected by reCAPTCHA. Google Privacy Policy and Terms apply."
+  },
+  "thankyou": {
+    "title": "Thanks! Message received",
+    "body": "I’ll be in touch shortly. Want to go back to the homepage?",
+    "button": "Back to Home"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "email": "Email",
+    "quick": "Quick links"
+  }
+}

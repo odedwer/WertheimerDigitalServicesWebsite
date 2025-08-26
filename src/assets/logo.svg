@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="36" viewBox="0 0 360 72" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="360" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="50" font-family="Inter, Heebo, sans-serif" font-weight="700" font-size="42" fill="url(#g)">
+    WDS
+  </text>
+</svg>

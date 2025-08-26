@@ -1,20 +1,13 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: 3000,
-    open: true,
-    fs: {
-      strict: false
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '');
+  // Expose process.env.* (Amplify injects REACT_APP_* at build time)
+  return {
+    plugins: [react()],
+    define: {
+      'process.env': env
     }
-  },
-  build: {
-    outDir: 'dist',
-    emptyOutDir: true
-  },
-  images: {
-    unoptimized: true,
-  }
+  };
 });
