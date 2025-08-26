@@ -16,12 +16,12 @@ export default function Home() {
       <section id="home" className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 opacity-30 pointer-events-none"
              style={{ background: 'radial-gradient(1200px 600px at 50% -10%, #A5B4FC22, transparent), radial-gradient(800px 400px at 80% 10%, #67E8F922, transparent)' }} />
-        <div className="container py-16 sm:py-24 text-center">
+        <div className="container py-12 sm:py-20 text-center">
           <Reveal>
             <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight mb-4">{t('hero.title')}</h1>
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="mx-auto max-w-2xl text-slate-600 mb-8">{t('hero.subtitle')}</p>
+            <p className="mx-auto max-w-2xl text-slate-600 mb-6">{t('hero.subtitle')}</p>
           </Reveal>
           <Reveal delay={0.25}>
             <div className={`flex justify-center gap-3 ${isRtl ? 'flex-row-reverse' : ''}`}>
@@ -33,7 +33,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="container py-16">
+      <section id="services" className="container py-12">
         <Reveal><h2 className="section-title">{t('services.title')}</h2></Reveal>
         <Reveal delay={0.1}><p className="section-subtitle mt-2">{t('services.subtitle')}</p></Reveal>
 
@@ -50,7 +50,7 @@ export default function Home() {
       </section>
 
       {/* Process */}
-      <section id="process" className="bg-slate-50 py-16">
+      <section id="process" className="bg-slate-50 py-12">
         <div className="container">
           <Reveal><h2 className="section-title">{t('process.title')}</h2></Reveal>
           <div className="relative mt-8 grid gap-8">
@@ -65,14 +65,14 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="container py-16">
+      <section id="about" className="container py-12">
         <Reveal><h2 className="section-title">{t('about.title')}</h2></Reveal>
         <Reveal delay={0.1}>
           <p className="mt-3 text-lg leading-8 text-slate-700 max-w-3xl">{t('about.body')}</p>
         </Reveal>
 
         {/* Capabilities */}
-        <div className="mt-10">
+        <div className="mt-8">
           <Reveal><h3 className="text-xl font-semibold mb-4">{t('capabilities.title')}</h3></Reveal>
           <div className="flex flex-wrap gap-2">
             {t('capabilities.items', { returnObjects: true }).map((cap, i) => (
@@ -84,21 +84,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tech */}
-      <section id="tech" className="bg-slate-50 py-16">
-        <div className="container">
-          <Reveal><h2 className="section-title">{t('tech.title')}</h2></Reveal>
-          <Reveal delay={0.1}><p className="section-subtitle mt-2">{t('tech.subtitle')}</p></Reveal>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {techItems.map((item, i) => (
-              <Reveal delay={0.04 * i} key={i}><TechBadge label={item} /></Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
-      <section id="faq" className="container py-16">
+      <section id="faq" className="container py-12">
         <Reveal><h2 className="section-title">{t('faq.title')}</h2></Reveal>
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           {['q1','q2','q3'].map((k, i) => (
@@ -113,7 +100,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="container text-center">
           <Reveal><h3 className="text-2xl font-semibold mb-3">{t('cta.headline')}</h3></Reveal>
           <Reveal delay={0.1}><CTAButton to="/contact">{t('cta.primary')}</CTAButton></Reveal>

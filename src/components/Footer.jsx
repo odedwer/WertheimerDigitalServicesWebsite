@@ -21,7 +21,7 @@ export default function Footer() {
             <li><a className="hover:text-primary" href="/#services">{t('nav.services')}</a></li>
             <li><a className="hover:text-primary" href="/#process">{t('nav.process')}</a></li>
             <li><a className="hover:text-primary" href="/#about">{t('nav.about')}</a></li>
-            <li><a className="hover:text-primary" href="/#tech">{t('nav.tech')}</a></li>
+            {/*<li><a className="hover:text-primary" href="/#tech">{t('nav.tech')}</a></li>*/}
             <li><a className="hover:text-primary" href="/contact">{t('nav.contact')}</a></li>
           </ul>
         </div>

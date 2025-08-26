@@ -16,7 +16,7 @@ export default function Navbar() {
           <a href="/#services" className="hover:text-primary">{t('nav.services')}</a>
           <a href="/#process" className="hover:text-primary">{t('nav.process')}</a>
           <a href="/#about" className="hover:text-primary">{t('nav.about')}</a>
-          <a href="/#tech" className="hover:text-primary">{t('nav.tech')}</a>
+          {/*<a href="/#tech" className="hover:text-primary">{t('nav.tech')}</a>*/}
           <a href="/#faq" className="hover:text-primary">{t('nav.faq')}</a>
           <a href="/contact" className="btn-ghost">{t('nav.contact')}</a>
           <LanguageToggle />
