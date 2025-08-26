@@ -21,7 +21,7 @@ export default function Navbar() {
           <a href="/contact" className="btn-ghost">{t('nav.contact')}</a>
           <LanguageToggle />
         </nav>
-        <div className="md:hidden flex items-center justify-between gap-2">
+        <div className="md:hidden flex items-center justify-evenly gap-2 w-full">
           <a href="/contact" className="btn-ghost">{t('nav.contact')}</a>
           <LanguageToggle />
         </div>
