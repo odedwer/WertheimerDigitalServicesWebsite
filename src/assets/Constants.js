@@ -4,27 +4,27 @@ export const summary = "From research labs to digital platforms, I streamline an
 
 export const featureTileObj = [
   {
-    image: "../../public/images/feature-tile-icon-01.svg", // or any relevant icon you want
+    image: "/images/feature-tile-icon-01.svg", // or any relevant icon you want
     header: "Custom Web Development",
     content: "Fast, scalable websites and internal tools built around your specific needs."
   },
   {
-    image: "../../public/images/feature-tile-icon-02.svg",
+    image: "/images/feature-tile-icon-02.svg",
     header: "Process Automation",
     content: "Save time and eliminate manual tasks by automating your workflows efficiently."
   },
   {
-    image: "../../public/images/feature-tile-icon-03.svg",
+    image: "/images/feature-tile-icon-03.svg",
     header: "AI-Enhanced Solutions",
     content: "Integrate machine learning and intelligent models into your operations for smarter decisions."
   },
   {
-    image: "../../public/images/feature-tile-icon-04.svg",
+    image: "/images/feature-tile-icon-04.svg",
     header: "Cloud Integrations",
     content: "AWS, Google Cloud, serverless APIs — building reliable, future-proof digital architectures."
   },
   {
-    image: "../../public/images/feature-tile-icon-05.svg",
+    image: "/images/feature-tile-icon-05.svg",
     header: "Research Data Tools",
     content: "Build interactive dashboards, automate data pipelines, and enhance research productivity."
   }
