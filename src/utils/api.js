@@ -1,24 +1,24 @@
-export async function sendContact({ email, subject, content, recaptchaToken }) {
-  const url = process.env.REACT_APP_API_URL;
-  const apiKey = process.env.REACT_APP_API_KEY;
 
-  if (!url || !apiKey) {
-    throw new Error('Missing API configuration. Ensure REACT_APP_API_URL and REACT_APP_API_KEY are set.');
-  }
+export async function sendContact({ email, subject, content, recaptchaToken }) {
+  const base = import.meta.env.VITE_API_URL;
+  if (!base) throw new Error('Missing API URL (set REACT_APP_API_URL or VITE_API_URL).');
+
+  const url = `${base.replace(/\/$/, '')}/contact`;
 
   const res = await fetch(url, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey
-    },
-    body: JSON.stringify({ email, subject, content, recaptchaToken })
+    headers: { 'Content-Type': 'application/json' }, // no API key, no auth headers
+    body: JSON.stringify({ email, subject, content, recaptchaToken }),
+    // credentials: 'omit' // default; keep cookies out
+    // mode: 'cors'       // default in browsers
   });
 
-  if (!res.ok) {
-    const text = await res.text().catch(() => '');
-    throw new Error(text || `Request failed with status ${res.status}`);
-  }
+  // Try to parse JSON either way
+  const text = await res.text();
+  const data = text ? (() => { try { return JSON.parse(text); } catch { return { raw: text }; } })() : null;
 
-  return res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(data?.error || `Request failed: ${res.status}`);
+  }
+  return data;
 }
