@@ -56,7 +56,7 @@ export default function Home() {
           <div className="relative mt-8 grid gap-8">
             {t('process.steps', { returnObjects: true }).map((s, idx) => (
               <Reveal delay={0.05 * idx} key={idx}>
-                <ProcessStep index={idx + 1} title={s.title} desc={s.desc} />
+                <ProcessStep title={s.title} desc={s.desc} />
               </Reveal>
             ))}
             <div className="absolute left-2 rtl:left-auto rtl:right-2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/40 to-accent/40 pointer-events-none"></div>
