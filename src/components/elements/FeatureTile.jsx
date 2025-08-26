@@ -16,7 +16,7 @@ const FeatureTile = ({
       <div className="features-tiles-item-header">
         <div className="features-tiles-item-image mb-16">
           <Image
-            src={`/images/${imageName}`}  // ✅ Correct way for Vite / public folder
+            src={imageName}
             alt="Features tile icon"
             width={64}
             height={64}
