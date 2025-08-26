@@ -21,7 +21,7 @@ const Logo = ({
       <h1 className="m-0">
         <Link to="/">
           <Image
-            src={'../../../../public/images/logo.svg'}
+            src={'/images/logo.svg'}
             alt="Tidy"
             width={32}
             height={32} />
