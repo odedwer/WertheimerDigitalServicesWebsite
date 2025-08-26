@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
-      <div className="container mx-auto flex items-center justify-between py-3">
+      <div className="container mx-auto flex items-center justify-evenly gap-2 w-full">
         <a href="/" className="flex items-center gap-3">
           <img src={logo} alt="WDS" className="h-8 w-auto" />
           <span className="font-semibold">{t('brand')}</span>
@@ -21,7 +21,7 @@ export default function Navbar() {
           <a href="/contact" className="btn-ghost">{t('nav.contact')}</a>
           <LanguageToggle />
         </nav>
-        <div className="md:hidden flex items-center justify-evenly gap-2 w-full">
+        <div className="md:hidden flex items-center items-center gap-4 ml-auto">
           <a href="/contact" className="btn-ghost">{t('nav.contact')}</a>
           <LanguageToggle />
         </div>
