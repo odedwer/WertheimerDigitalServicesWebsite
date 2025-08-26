@@ -1,6 +1,7 @@
 
 export async function sendContact({ email, subject, content, recaptchaToken }) {
   const base = import.meta.env.VITE_API_URL;
+  console.log(base);
   if (!base) throw new Error('Missing API URL (set REACT_APP_API_URL or VITE_API_URL).');
 
   const url = `${base.replace(/\/$/, '')}/contact`;
